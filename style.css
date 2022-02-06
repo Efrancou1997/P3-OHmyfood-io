@@ -1,0 +1,656 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Shrikhand&display=swap');
+
+*, 
+::before, 
+::after {
+  box-sizing: border-box;
+}
+
+/* LOADER */
+
+.loader {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    background-color: #ffffff;
+    height: 100vh;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.9;
+    animation: disappear 200ms 3s forwards;
+    transform-origin: top;
+}
+
+.loader::after {
+    content: "";
+    height: 100px;
+    width: 100px;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #9356dc;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out;
+    animation-iteration-count: 3;
+}
+
+/* GLOBAL PARAMETRES  */
+
+body {
+    margin: 0px;
+    font-family: "Roboto", sans-serif;
+    background-color: #f6f6f6;
+    
+}
+
+header {
+    font-family:"Shrikhand", cursive;
+    text-align: center;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
+    padding: 0.3rem;
+    margin: 0;
+    position: relative;
+}
+
+main {
+    padding: 0 7rem;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.maps {
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+}
+
+.maps_icon {
+    width: 15px;
+}
+
+.maps_search input {
+    width: 150px;
+    border: none;
+    outline: none;
+    background-color: #eaeaea;
+    font-size: 1rem;
+    padding: 15px 0px 15px 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* HEADER INDEX */
+
+header.Page1 {
+    font-family:"Shrikhand", cursive;
+    text-align: center;
+    box-shadow: 0 0 0.5rem rgb(0 0 0 / 25%);
+    padding: 0.3rem;
+    margin: 0;
+    position: relative;
+}
+
+header.Page1::before {
+    display: inline-block;
+    position: absolute;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f060";
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform 200ms;
+}
+
+header.Page1:hover::before {
+    transform: translateY(-50%) scale(1.2);
+  }
+
+header.Page2::before {
+    display: inline-block;
+    position: absolute;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f060";
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform 200ms;
+}
+
+header.Page2:hover::before {
+    transform: translateY(-50%) scale(1.2);
+  }
+
+header.Page3::before {
+    display: inline-block;
+    position: absolute;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f060";
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform 200ms;
+}
+
+header.Page3:hover::before {
+    transform: translateY(-50%) scale(1.2);
+  }
+
+header.Page4::before {
+    display: inline-block;
+    position: absolute;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f060";
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    transition: transform 200ms;
+}
+
+header.Page4:hover::before {
+    transform: translateY(-50%) scale(1.2);
+  }
+
+/* EXPLORER */
+
+.explorer {
+    text-align: center;
+    margin: 2rem;
+}
+
+.explorer h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+.explorer p {
+    font-size: 1rem;
+}
+
+.explorer button {
+    color: white;
+    font-weight: 300;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 2px 1px 8px -3px #7e7e7e;
+    background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+    transition: transform 200ms;
+    margin-top: 2rem;
+}
+
+.explorer button:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.titreFonct {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.tutoOl {
+    counter-reset: compteListe;
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+}
+
+.tutoLi {
+    position: relative;
+    background-color: #f6f6f6;
+    padding: 1.5rem 2rem;  
+    flex-grow: 1;
+    border-radius: 1rem;
+    box-shadow: 2px 1px 8px -3px #000000;
+}
+
+.tutoLi::before { 
+    content: counter(compteListe);
+    counter-increment: compteListe;
+    color: white;  
+    background-color: #9356dc; 
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    transform: translateY(-50%);
+}
+
+.tutoLi:hover {
+    transform: scale(1.02);
+    background-color: #DCDCDC;
+}
+
+.tutoLi i {
+    margin-right: 1rem;
+    color: #7e7e7e;
+    font-size: 1.5rem;
+}
+
+.tutoLi:hover i:before {
+    color: #9356dc;
+}
+
+/* MENU */
+
+.menus {
+    background-color: #f6f6f6;
+    margin-bottom: 2rem;
+}
+
+.titreMenu {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+
+.menus_cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    
+}
+
+.new {
+    position: relative;
+}
+
+.new::before {
+    content:"Nouveau" ;
+    position: absolute;
+    font-weight: bold;
+    border-radius: 2px;
+    height: 2rem;
+    width: 5rem;
+    background-color: #99e2d0;
+    color: #1b6150;
+    display: grid;
+    place-items: center;
+    right: 1rem;
+    top: 1rem;
+}
+
+.card_description {
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 4px 4px 6px #aaa;
+}
+
+.card_images1 {
+    background-image: url("./images/restaurants/menu-1.jpg");
+    height: 12rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 4px 4px 6px #aaa;
+}
+
+.card_images2 {
+    background-image: url("./images/restaurants/menu-2.jpg");
+    height: 12rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 4px 4px 6px #aaa;
+}
+
+.card_images3 {
+    background-image: url("./images/restaurants/menu-3.jpg");
+    height: 12rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 4px 4px 6px #aaa;
+}
+
+.card_images4 {
+    background-image: url("./images/restaurants/menu-4.jpg");
+    height: 12rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 1rem 1rem 0 0;
+    box-shadow: 4px 4px 6px #aaa;
+}
+
+.card_descriptionH3 {
+    padding: 0.3rem;
+}
+
+.card_descriptionP {
+    padding: 0.3rem;
+}
+
+.card_descriptionI {
+    font-size: 2rem;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card_description_Heart {
+    color: transparent;
+    background-image: linear-gradient(to top,#9356dc,#ff79da);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+
+.card_description_Heart:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #353535;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+footer H2 {
+    font-family: "Shrikhand", "sans-serif";
+    font-weight: 500;
+    padding: 1rem 0;
+}
+
+footer P {
+    padding: 0.2rem;
+}
+
+/* PAGES INDEX */
+
+.img1 {
+    display: block;
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img2 {
+    display: block;
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img3 {
+    display: block;
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img4 {
+    display: block;
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+.divH2 {
+    font-family: "Shrikhand", "cursive";
+    padding: 1rem 0.5rem;
+    padding-left: 1.25rem;
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #f6f6f6;
+}
+
+.resto_Title { 
+    margin-top: -2rem; 
+}
+
+.resto-main {
+    padding: 0 1rem;
+    background-color: #f6f6f6;
+}
+
+.menus2_0 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    background-color: #f6f6f6;
+}
+
+.menus2_0 h3{
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 0 1.5rem;
+}
+
+.menus2_0 h3::after {
+    content: "";
+    position: absolute;
+    top: 1.5rem;
+    left: 25px;
+    height: 0.25rem;
+    width: 3rem;
+    background-color: #99e2d0;
+}
+
+.menus_category {
+    overflow: hidden;
+}
+
+.menu-item {
+    display: flex;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 0.5rem;
+    box-shadow: 2px 1px 8px -3px #7e7e7e;
+    animation: appear 1s;
+    animation-fill-mode: both;
+}
+
+.menu-item_price {
+    margin-left: auto;
+    font-weight: 900;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end;
+}
+
+.menu-item_description {
+    padding: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+h4, p, .menu-item_description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.menu-item_check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 1rem 1rem 0 ;
+  background-color: #99e2d0 ;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
+}
+
+.fas_fa-check {
+   display: grid;
+   place-items: center;
+   background: white;
+   height: 2rem;
+   width: 2rem;
+   border-radius: 1rem;
+   color: #99e2d0;
+}
+
+.menu-item:hover {
+    cursor: pointer;
+}
+
+.menu-item:hover .menu-item_check {
+    margin-right: 0;
+}
+
+.menu-item:hover i {
+    animation: quarterspin 0.5s ease-in-out;
+}
+
+/* COMMANDE BUTTON */
+
+.commande {
+    height: 25vh;
+    display: grid;
+    place-items: center;
+}
+
+.commande button {
+    color: white;
+    width: 220px;
+    height: 50px;
+    font-weight: 300;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    box-shadow: 2px 1px 8px -3px #000000;
+    background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+    transition: transform 200ms;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.commande button:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* RESPONSIVE  */
+
+@media screen and (max-width:1000px) {
+    .menus_cards {
+        grid-template-columns: repeat(1, 1fr);
+    } 
+}
+
+@media screen and (max-width:1000px) {
+    main {
+        padding: 0 1rem;
+    } 
+}
+
+@media screen and (max-width:1000px) {
+    .tutoOl {
+        flex-direction: column;
+    } 
+}
+
+@media  screen and (max-width: 1000px) {
+    .menus2_0 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ANIMATION  */
+
+@keyframes quarterspin {
+    0% {
+      transform: rotate(-270deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+
+@keyframes appear {
+      0% {
+          transform: translateY(50%);
+          opacity: 0;
+      }
+      100% {
+          transform: translateY(0);
+          opacity: 1;
+      }
+  }
+
+@keyframes disappear {
+    to {
+        transform: scale(0);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* DE 2 A 4 CAR LE H3 EST EN PREMIÈRE POSITION */
+
+.menus_category .menu-item:nth-child(2) {
+    animation-delay: 100ms;
+}
+
+.menus_category .menu-item:nth-child(3) {
+    animation-delay: 200ms;
+}
+
+.menus_category .menu-item:nth-child(4) {
+    animation-delay: 300ms;
+}
